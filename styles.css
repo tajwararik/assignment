@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Matemasie&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: serif;
+  background-color: #f0ba09;
+}
+
+header {
+  background-color: #b10b0b;
+  border-bottom: 5px solid #000;
+}
+
+button {
+  width: 100px;
+  font-size: 16px;
+}
+
+.btn-warning {
+  font-weight: 600;
+  border-radius: 40px;
+}
+
+.btn-warning {
+  transition: transform 0.3s ease; /* Transition for the animation */
+}
+
+.btn-warning:active {
+  transform: scale(0.9); /* Scale down when the button is clicked */
+}
+
+.home-container {
+  width: 100vw;
+  height: 100vh;
+  background: url(./images/restaurant.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.home-container h1,
+.menu-container h1,
+.about-container h1,
+.contact-container h1 {
+  font-family: "Matemasie", sans-serif;
+  text-align: center;
+  text-decoration: underline;
+  padding: 50px 10px 25px;
+}
+
+.home-container h1 {
+  color: #f0ba09;
+}
+
+.home-container p {
+  font-family: sans-serif;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.date-time-block {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+}
+
+footer a {
+  color: #f0ba09;
+}
+
+.menu-container section {
+  max-width: 750px;
+  font-family: sans-serif;
+  color: #000;
+  margin: 0 auto;
+}
+
+.menu-container h1,
+.about-container h1,
+.contact-container h1 {
+  /* color: #000; */
+  padding: 25px 10px;
+}
+
+.menu-container h3 {
+  font-family: "Matemasie", sans-serif;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+.menu-container img {
+  border: 2px solid black;
+}
+
+.about-container p,
+.contact-container p {
+  font-family: sans-serif;
+  padding: 15px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+}
+
+.contact-container h4 {
+  font-family: "Matemasie", sans-serif;
+  letter-spacing: 3px;
+}
+
+.contact-container a {
+  color: #b10b0b;
+}
+
+.contact-container button {
+  color: #fff;
+  background-color: #b10b0b;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.star-rating .fa-star {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ddd;
+  margin: 0 5px;
+}
+
+.star-rating .fa-star.selected {
+  color: #b10b0b;
+}
+
+#contactForm {
+  padding: 16px;
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+.faq-item {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.faq-answer {
+  margin-top: 5px;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-content {
+  color: #fff;
+  background-color: #b10b0b;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#changeBgColorBtn {
+  font-size: 0.75rem; /* Makes the font smaller */
+  padding: 0.5rem 1rem; /* Adjusts padding for a better appearance */
+  border-radius: 0.25rem; /* Optional: round corners */
+  background-color: #ffc107; /* Bootstrap warning color */
+  color: #000;
+  border: none; /* Remove border */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+#changeBgColorBtn:hover {
+  background-color: #f0b506; /* Darker shade on hover */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+
+#loginContainer {
+  padding: 20px;
+  background-color: #f0ba09;
+  border-radius: 5px;
+}
+
+#userInfo {
+  margin-top: 20px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  color: #fff;
+  background-color: #000;
+}
+
+/* .navbar.dark-mode {
+  background-color: #333;
+}
+
+.btn-warning.dark-mode {
+  background-color: #ffc107;
+} */
