@@ -88,9 +88,18 @@
     <main class="container menu-container py-0">
       <section class="text-center mb-5">
         <h1 class="display-5">Menu</h1>
+
+        <div class="filter-container text-center mb-4">
+          <select id="menuFilter" class="form-select w-25 mx-auto">
+            <option value="all">All</option>
+            <option value="seafood">Seafood</option>
+            <option value="meat">Meat</option>
+            <option value="vegetarian">Vegetarian</option>
+          </select>
+        </div>
       </section>
 
-      <section class="row mb-3">
+      <section class="row mb-3" data-category="seafood">
         <div class="col-md-6">
           <h3 class="font-weight-bold">
             1. Grilled Salmon with Saffron Cream Sauce
@@ -109,7 +118,7 @@
         </div>
       </section>
 
-      <section class="row mb-3">
+      <section class="row mb-3" data-category="meat">
         <div class="col-md-6">
           <h3 class="font-weight-bold">2. Herb-Crusted Rack of Lamb</h3>
           <img
@@ -126,7 +135,7 @@
         </div>
       </section>
 
-      <section class="row mb-3">
+      <section class="row mb-3" data-category="vegetarian">
         <div class="col-md-6">
           <h3 class="font-weight-bold">3. Vegetarian Saffron Paella</h3>
           <img
@@ -143,7 +152,7 @@
         </div>
       </section>
 
-      <section class="row mb-5">
+      <section class="row mb-5" data-category="meat">
         <div class="col-md-6">
           <h3 class="font-weight-bold">4. Filet Mignon with Truffle Butter</h3>
           <img
