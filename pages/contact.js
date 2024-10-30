@@ -1,17 +1,21 @@
 // Audio object for the online sound effect
-const clickSound = new Audio('../audio/click.mp3'); 
+const clickSound = new Audio("../audio/click.mp3");
 
-clickSound.addEventListener('canplay', () => {
+clickSound.addEventListener("canplay", () => {
   clickSound.play();
 });
 
 document.querySelectorAll(".btn-warning").forEach((button) => {
   button.addEventListener("click", function () {
     // Play the sound when it is ready
-    clickSound.addEventListener('canplay', () => {
-      clickSound.currentTime = 0; // Reset sound to the start
-      clickSound.play(); // Play the sound effect
-    }, { once: true }); // The listener is removed after it plays once
+    clickSound.addEventListener(
+      "canplay",
+      () => {
+        clickSound.currentTime = 0; // Reset sound to the start
+        clickSound.play(); // Play the sound effect
+      },
+      { once: true }
+    ); // The listener is removed after it plays once
 
     this.classList.add("clicked"); // Add a class for the animation
 
@@ -58,61 +62,63 @@ stars.forEach((star) => {
 });
 
 // Asynchronous function to handle form submission
-document.getElementById("contactForm").addEventListener("submit", async function (event) {
-  event.preventDefault(); // Prevent the default form submission behavior
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
 
-  let isValid = true;
+    let isValid = true;
 
-  // Validate Name
-  const nameInput = document.getElementById("name");
-  if (!nameInput.value.trim()) {
-    nameInput.classList.add("is-invalid");
-    isValid = false;
-  } else {
-    nameInput.classList.remove("is-invalid");
-    nameInput.classList.add("is-valid");
-  }
+    // Validate Name
+    const nameInput = document.getElementById("name");
+    if (!nameInput.value.trim()) {
+      nameInput.classList.add("is-invalid");
+      isValid = false;
+    } else {
+      nameInput.classList.remove("is-invalid");
+      nameInput.classList.add("is-valid");
+    }
 
-  // Validate Email
-  const emailInput = document.getElementById("email");
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(emailInput.value)) {
-    emailInput.classList.add("is-invalid");
-    isValid = false;
-  } else {
-    emailInput.classList.remove("is-invalid");
-    emailInput.classList.add("is-valid");
-  }
+    // Validate Email
+    const emailInput = document.getElementById("email");
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailInput.value)) {
+      emailInput.classList.add("is-invalid");
+      isValid = false;
+    } else {
+      emailInput.classList.remove("is-invalid");
+      emailInput.classList.add("is-valid");
+    }
 
-  // Validate Password
-  const passwordInput = document.getElementById("password");
-  if (passwordInput.value.length < 8) {
-    passwordInput.classList.add("is-invalid");
-    isValid = false;
-  } else {
-    passwordInput.classList.remove("is-invalid");
-    passwordInput.classList.add("is-valid");
-  }
+    // Validate Password
+    const passwordInput = document.getElementById("password");
+    if (passwordInput.value.length < 8) {
+      passwordInput.classList.add("is-invalid");
+      isValid = false;
+    } else {
+      passwordInput.classList.remove("is-invalid");
+      passwordInput.classList.add("is-valid");
+    }
 
-  // Validate Confirm Password
-  const confirmPasswordInput = document.getElementById("confirmPassword");
-  if (passwordInput.value !== confirmPasswordInput.value) {
-    confirmPasswordInput.classList.add("is-invalid");
-    isValid = false;
-  } else {
-    confirmPasswordInput.classList.remove("is-invalid");
-    confirmPasswordInput.classList.add("is-valid");
-  }
+    // Validate Confirm Password
+    const confirmPasswordInput = document.getElementById("confirmPassword");
+    if (passwordInput.value !== confirmPasswordInput.value) {
+      confirmPasswordInput.classList.add("is-invalid");
+      isValid = false;
+    } else {
+      confirmPasswordInput.classList.remove("is-invalid");
+      confirmPasswordInput.classList.add("is-valid");
+    }
 
-  // If the form is valid, allow form submission
-  if (isValid) {
-    // Simulate an asynchronous operation (e.g., sending data to a server)
-    await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulates a delay of 1 second
+    // If the form is valid, allow form submission
+    if (isValid) {
+      // Simulate an asynchronous operation (e.g., sending data to a server)
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulates a delay of 1 second
 
-    // Show thank you popup
-    document.getElementById("thankYouPopup").style.display = "flex"; // Show popup
-  }
-});
+      // Show thank you popup
+      document.getElementById("thankYouPopup").style.display = "flex"; // Show popup
+    }
+  });
 
 // Add event listener to the reset button
 document.getElementById("resetFormBtn").addEventListener("click", function () {
@@ -152,3 +158,29 @@ document
     // Update the index to cycle through colors
     currentColorIndex = (currentColorIndex + 1) % colors.length;
   });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("themeToggle");
+  const body = document.body;
+
+  // Check local storage for theme preference
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    body.classList.add(savedTheme);
+    updateThemeIcon(savedTheme);
+  }
+
+  themeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    const currentTheme = body.classList.contains("dark-mode")
+      ? "dark-mode"
+      : "light-mode";
+    localStorage.setItem("theme", currentTheme);
+    updateThemeIcon(currentTheme);
+  });
+
+  function updateThemeIcon(theme) {
+    const icon = themeToggle.querySelector("i");
+    icon.className = theme === "dark-mode" ? "fas fa-sun" : "fas fa-moon";
+  }
+});

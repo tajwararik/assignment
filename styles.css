@@ -98,14 +98,13 @@ footer a {
 .menu-container section {
   max-width: 750px;
   font-family: sans-serif;
-  color: #000;
+  /* color: #000; */
   margin: 0 auto;
 }
 
 .menu-container h1,
 .about-container h1,
 .contact-container h1 {
-  /* color: #000; */
   padding: 25px 10px;
 }
 
@@ -129,7 +128,6 @@ footer a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #000;
 }
 
 .contact-container h4 {
@@ -214,7 +212,7 @@ footer a {
   font-size: 0.75rem; /* Makes the font smaller */
   padding: 0.5rem 1rem; /* Adjusts padding for a better appearance */
   border-radius: 0.25rem; /* Optional: round corners */
-  background-color: #ffc107; /* Bootstrap warning color */
+  background-color: #ffc107; 
   color: #000;
   border: none; /* Remove border */
   transition: background-color 0.3s ease; /* Smooth transition */
@@ -242,10 +240,10 @@ body.dark-mode {
   background-color: #000;
 }
 
-/* .navbar.dark-mode {
+.navbar.dark-mode {
   background-color: #333;
 }
 
 .btn-warning.dark-mode {
   background-color: #ffc107;
-} */
+}
